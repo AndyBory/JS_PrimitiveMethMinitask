@@ -22,9 +22,8 @@ function sizeLargestWord (str) {
     if (word.length > size) {
       size = word.length
     }
-    result = size;
   }
-  return result;
+  return size;
 }
-const secondStr = 'test string aest test new yes largestword';
+const secondStr = '             test string aest test new yes largestword            ';
 console.log(sizeLargestWord(secondStr));
