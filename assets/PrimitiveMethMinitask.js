@@ -20,7 +20,6 @@ console.log(numberOfLines(firstStr));
 function sizeLargestWord (str) {
   const words = str.split(' ');
   console.log(words);
-  let result = '';
   let size = 0;
   for(let i = 0; i < words.length; i++) {
     const word = words[i];
