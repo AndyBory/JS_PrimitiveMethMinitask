@@ -1,12 +1,17 @@
 // 1. Напишите функцию, которая принимает строку и возвращает количество слов в ней.
+const notWords = ['', '+',  '-', '*', '/', ',', '.', ':', ';', '(', ')'];
 
-function numberOfLines (str) {
-  let words = str.trim().split(' ');
-  console.log(words);
-  return words.length;
-}
+// function numberOfLines(str, disalowedWordsArray = notWords) {
+//   const words = str.split(' ');
+//   const filtered = words.filter((word) => !disalowedWordsArray.includes(word));
+//   console.log(words);
+//   return filtered.length;
+// }
 
-const firstStr = '           test string aest test new yes 654654 hello     ';
+const numberOfLines = (str, disalowedWordsArray = notWords) => str.split(' ').filter((word) => !disalowedWordsArray.includes(word)).length;
+
+const firstStr = '  test string * aest    / test new yes  hello  .  , ';
+console.log(firstStr);
 console.log(numberOfLines(firstStr));
 
 
