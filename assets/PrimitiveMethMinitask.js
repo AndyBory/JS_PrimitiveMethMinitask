@@ -11,7 +11,7 @@ const notWords = ['', '+',  '-', '*', '/', ',', '.', ':', ';', '(', ')'];
 const numberOfLines = (str, disalowedWordsArray = notWords) => str.split(' ').filter((word) => !disalowedWordsArray.includes(word)).length;
 
 const firstStr = '  test string * aest    / test new yes  hello  .  , ';
-console.log(firstStr);
+// console.log(firstStr);
 console.log(numberOfLines(firstStr));
 
 
@@ -19,15 +19,19 @@ console.log(numberOfLines(firstStr));
 
 function sizeLargestWord (str) {
   const words = str.split(' ');
-  console.log(words);
-  let size = 0;
-  for(let i = 0; i < words.length; i++) {
-    const word = words[i];
+  // console.log(words);
+  let size = words[0].length;
+  // for(i = 1; i < words.length; i++) {
+  //   if (words[i].length > size) {
+  //     size = words[i].length
+  //   }
+  // }
+  words.forEach(word => {
     if (word.length > size) {
-      size = word.length
+      size = word.length;
     }
-  }
+  });
   return size;
 }
-const secondStr = '             test string aest test new yes largestword            ';
+const secondStr = 'test string aest test new yes largestword      good';
 console.log(sizeLargestWord(secondStr));
